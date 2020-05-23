@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Script3.gd" type="Script" id=1]
+[ext_resource path="res://Script1.gd" type="Script" id=1]
 
 [sub_resource type="QuadMesh" id=1]
 
@@ -29,3 +29,6 @@ current = true
 
 [node name="Spatial1" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 100, 0, 0 )
+
+[node name="Viewport" type="Viewport" parent="Spatial1"]
+size = Vector2( 100, 100 )

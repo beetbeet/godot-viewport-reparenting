@@ -14,9 +14,10 @@ func _ready():
 		# leave first node because it is a Viewport
 			if N != master_node.get_child(0):
 				var node = N
+				var node_position = node.get_translation()
 				master_node.remove_child(node)
-				# translate also child nodes
-				node.set_translation(master_node.get_translation())
+				# translate also child nodes (add its position to master node position)
+				node.set_translation(node_position + master_node.get_translation())
 				viewport_node.add_child(node)
 				node.set_owner(viewport_node)
 
