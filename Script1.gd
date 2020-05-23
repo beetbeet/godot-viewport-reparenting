@@ -20,5 +20,17 @@ func _ready():
 				viewport_node.add_child(node)
 				node.set_owner(viewport_node)
 
+
 	# set viewport texturte to mesh node albedo
 	mesh_node.get_surface_material(0).albedo_texture = viewport_node.get_texture()
+	# update viewport path
+	mesh_node.get_surface_material(0).albedo_texture.set_viewport_path_in_scene("/root/Spatial/Spatial1/Viewport")
+
+	print_tree()
+
+	print(save_scene())
+
+func save_scene():
+	var packed_scene = PackedScene.new()
+	packed_scene.pack(get_tree().get_current_scene())
+	ResourceSaver.save("res://my_generated_scene.tscn", packed_scene)
