@@ -19,7 +19,7 @@ func _ready():
 				# translate also child nodes (add its position to master node position)
 				node.set_translation(node_position + master_node.get_translation())
 				viewport_node.add_child(node)
-				node.set_owner(viewport_node)
+				node.set_owner(self)
 
 
 	# set viewport texturte to mesh node albedo
